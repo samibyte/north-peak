@@ -6,12 +6,15 @@ import {
   ChevronRight,
   Code2,
   Gauge,
+  Moon,
   MousePointerClick,
   Search,
+  Sun,
   TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -73,6 +76,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <header
@@ -184,6 +188,20 @@ export const Navbar = () => {
               Get Started
             </Button>
           </Link>
+
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon-sm"
+            aria-label="Toggle color theme"
+            title="Toggle color theme"
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+          >
+            <Sun className="size-4 dark:hidden" aria-hidden="true" />
+            <Moon className="hidden size-4 dark:block" aria-hidden="true" />
+          </Button>
 
           {/* Hamburger (Mobile) */}
           <button
