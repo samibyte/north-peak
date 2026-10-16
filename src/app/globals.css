@@ -59,12 +59,20 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   @keyframes accordion-down {
-    from { height: 0; }
-    to { height: var(--radix-accordion-content-height); }
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
   }
   @keyframes accordion-up {
-    from { height: var(--radix-accordion-content-height); }
-    to { height: 0; }
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
 
@@ -152,7 +160,8 @@
   body {
     @apply bg-background text-foreground;
   }
-  button:not(:disabled), [role="button"]:not(:disabled) {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   html {
