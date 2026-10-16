@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import {
+  Bot,
+  ChevronDown,
+  ChevronRight,
+  Code2,
+  Gauge,
+  MousePointerClick,
+  Search,
+  TrendingUp,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  ChevronRight,
-  ChevronDown,
-  TrendingUp,
-  Search,
-  MousePointerClick,
-  Code2,
-  Bot,
-  Gauge,
-} from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
