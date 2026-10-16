@@ -115,37 +115,42 @@ export const Navbar = () => {
                           const Icon = item.icon;
                           return (
                             <li key={item.title}>
-                              <NavigationMenuLink asChild>
-                                <Link
-                                  href={item.href}
-                                  className="hover:bg-accent group flex items-start gap-3 rounded-lg p-3 transition-colors"
-                                >
-                                  <div className="bg-primary/10 text-primary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md">
-                                    <Icon className="size-4" />
-                                  </div>
-                                  <div>
-                                    <div className="text-sm font-medium transition-transform duration-200 group-hover:translate-x-0.5">
-                                      {item.title}
+                              <NavigationMenuLink
+                                render={
+                                  <Link
+                                    href={item.href}
+                                    className="hover:bg-accent group flex items-start gap-3 rounded-lg p-3 transition-colors"
+                                  >
+                                    <div className="bg-primary/10 text-primary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md">
+                                      <Icon className="size-4" />
                                     </div>
-                                    <p className="text-muted-foreground mt-0.5 text-xs leading-snug">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </Link>
-                              </NavigationMenuLink>
+                                    <div>
+                                      <div className="text-sm font-medium transition-transform duration-200 group-hover:translate-x-0.5">
+                                        {item.title}
+                                      </div>
+                                      <p className="text-muted-foreground mt-0.5 text-xs leading-snug">
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                  </Link>
+                                }
+                              ></NavigationMenuLink>
                             </li>
                           );
                         })}
                       </div>
                       <li className="mt-2 border-t pt-2">
-                        <NavigationMenuLink asChild>
-                          <Link
-                            href="/services"
-                            className="text-primary hover:bg-accent flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
-                          >
-                            View all services <ChevronRight className="size-4" />
-                          </Link>
-                        </NavigationMenuLink>
+                        <NavigationMenuLink
+                          render={
+                            <Link
+                              href="/services"
+                              className="text-primary hover:bg-accent flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
+                            >
+                              View all services{" "}
+                              <ChevronRight className="size-4" />
+                            </Link>
+                          }
+                        ></NavigationMenuLink>
                       </li>
                     </ul>
                   </NavigationMenuContent>
@@ -182,6 +187,7 @@ export const Navbar = () => {
 
           {/* Hamburger (Mobile) */}
           <button
+            type="button"
             className="text-muted-foreground relative flex size-8 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
@@ -218,6 +224,7 @@ export const Navbar = () => {
             link.dropdownItems ? (
               <div key={link.label} className="py-3 first:pt-0 last:pb-0">
                 <button
+                  type="button"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === link.label ? null : link.label,
@@ -282,12 +289,20 @@ export const Navbar = () => {
           )}
         </nav>
         <div className="mt-4 flex gap-2 border-t pt-4">
-          <Link href="/contact" className="flex-1" onClick={() => setIsMenuOpen(false)}>
+          <Link
+            href="/contact"
+            className="flex-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Button variant="outline" size="sm" className="w-full">
               Contact Us
             </Button>
           </Link>
-          <Link href="/contact" className="flex-1" onClick={() => setIsMenuOpen(false)}>
+          <Link
+            href="/contact"
+            className="flex-1"
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Button size="sm" className="w-full">
               Get Started
             </Button>
