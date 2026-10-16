@@ -1,5 +1,5 @@
+import { ArrowUpRight, TrendingUp } from "lucide-react";
 import Link from "next/link";
-import { TrendingUp, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
@@ -137,10 +137,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="text-muted-foreground mt-8 flex flex-col items-center justify-between gap-4 border-t pt-6 pb-8 text-sm sm:flex-row">
-          <p>
-            © {new Date().getFullYear()} Northpeak Growth Partners. All rights
-            reserved.
-          </p>
+          <p>© 2026 Northpeak Growth Partners. All rights reserved.</p>
           <div className="flex gap-4">
             {legal.map((item) => (
               <Link
